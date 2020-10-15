@@ -1,0 +1,52 @@
+<ion-app>
+    <ion-split-pane when="sm" contentId="main-content">
+      <ion-menu contentId="main-content">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+  
+        <ion-content>
+          <ion-list>
+            <ion-list-header>
+              Navigate
+            </ion-list-header>
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index"> 
+              <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+                <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon> 
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+  
+      <div class="ion-page" id="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-menu-toggle>
+                <ion-button>
+                  <ion-icon slot="icon-only" name="menu"></ion-icon>
+                </ion-button>
+              </ion-menu-toggle>
+            </ion-buttons>
+            <ion-title>Portal</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <h1>Welcome to the O365 PowerApp Portal!</h1>
+          <div></div>
+           <ion-button expand="block" rel="noopener noreferrer" href="https://partner.microsoft.com/en-US/">Manage Subscription</ion-button>
+           <h1></h1>
+           <ion-button expand="block" color="tertiary" rel="noopener noreferrer" href="https://partner.microsoft.com/en-US/">Teams</ion-button>
+           <ion-button expand="block" color="success"rel="noopener noreferrer" href="https://partner.microsoft.com/en-US/">Power BI</ion-button>
+           <ion-button expand="block" color="danger" rel="noopener noreferrer" href="https://partner.microsoft.com/en-US/">Azure</ion-button>
+  
+        </ion-content>
+      </div>
+  
+    </ion-split-pane>
+  </ion-app>
+  
