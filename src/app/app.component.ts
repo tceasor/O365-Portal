@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+// exports appPages which iterates to create and direct to side pages
 export class AppComponent {
   public selectedIndex = 0;
   public appPages = [
